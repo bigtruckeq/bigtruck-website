@@ -275,22 +275,17 @@ h2{
   color:#fff;
 }
 
-.info{
-  line-height:2;
-  font-size:16px;
-  color:var(--slate);
-}
-
 .hero-visual{
   display:flex;
   justify-content:center;
   align-items:center;
 }
 
-.hero-visual svg{
+.hero-visual img{
   width:100%;
   max-width:520px;
   height:auto;
+  filter:drop-shadow(0 25px 30px rgba(18,35,32,0.25));
 }
 
 /* ===== SECTION SHARED ===== */
@@ -718,7 +713,7 @@ section{
     margin-bottom:10px;
   }
 
-  .hero-visual svg{
+  .hero-visual img{
     max-width:340px;
   }
 
@@ -853,56 +848,10 @@ section{
         <a class="button outline" href="#contact">Request Service</a>
       </div>
 
-      <div class="info">
-        <p>📞 +1 (786) 562-6638</p>
-        <p>✉️ contact@bigtruckeq.com</p>
-        <p>📍 5003 E 11th Ave, Hialeah FL, 33013</p>
-      </div>
-
     </div>
 
     <div class="hero-visual">
-      <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="tankGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#22a892"/>
-            <stop offset="100%" stop-color="#0d5c50"/>
-          </linearGradient>
-        </defs>
-
-        <ellipse cx="460" cy="478" rx="370" ry="24" fill="#12786a" opacity="0.12"/>
-
-        <rect x="90" y="360" width="650" height="16" rx="6" fill="#122320"/>
-
-        <path d="M90,360 L90,258 Q90,222 126,222 L196,222 L230,178 L230,360 Z" fill="#122320"/>
-        <rect x="112" y="242" width="72" height="56" rx="8" fill="#bfe3da"/>
-        <rect x="70" y="344" width="42" height="20" rx="4" fill="#0b1512"/>
-        <circle cx="94" cy="330" r="7" fill="#ffd166"/>
-
-        <rect x="230" y="176" width="440" height="184" rx="30" fill="url(#tankGradient)"/>
-        <rect x="230" y="230" width="440" height="24" fill="#ffffff" opacity="0.14"/>
-        <line x1="330" y1="176" x2="330" y2="360" stroke="#ffffff" stroke-opacity="0.15" stroke-width="4"/>
-        <line x1="430" y1="176" x2="430" y2="360" stroke="#ffffff" stroke-opacity="0.15" stroke-width="4"/>
-        <line x1="530" y1="176" x2="530" y2="360" stroke="#ffffff" stroke-opacity="0.15" stroke-width="4"/>
-        <line x1="630" y1="176" x2="630" y2="360" stroke="#ffffff" stroke-opacity="0.15" stroke-width="4"/>
-
-        <rect x="330" y="270" width="220" height="46" rx="8" fill="#0d5c50" opacity="0.55"/>
-        <text x="440" y="300" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#ffffff">PORTA-POTTY SERVICE</text>
-
-        <rect x="207" y="140" width="12" height="90" rx="5" fill="#2b2b2b"/>
-        <circle cx="600" cy="160" r="26" fill="none" stroke="#122320" stroke-width="9"/>
-        <circle cx="600" cy="160" r="10" fill="#122320"/>
-
-        <circle cx="655" cy="330" r="6" fill="#e15b4d"/>
-
-        <circle cx="130" cy="374" r="34" fill="#181818"/>
-        <circle cx="130" cy="374" r="15" fill="#dfe7e5"/>
-
-        <circle cx="565" cy="374" r="36" fill="#181818"/>
-        <circle cx="565" cy="374" r="16" fill="#dfe7e5"/>
-        <circle cx="625" cy="374" r="36" fill="#181818"/>
-        <circle cx="625" cy="374" r="16" fill="#dfe7e5"/>
-      </svg>
+      <img src="truck.png" alt="Big Truck Equipment porta-potty vacuum service truck">
     </div>
 
   </div>
