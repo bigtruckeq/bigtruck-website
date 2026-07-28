@@ -331,19 +331,40 @@ h1{
 
 .marquee-track{
   display:flex;
-  gap:56px;
+  gap:26px;
   width:max-content;
-  animation:marquee-scroll 26s linear infinite;
+  animation:marquee-scroll 30s linear infinite;
 }
 
-.marquee-track span{
-  font-size:24px;
-  font-weight:800;
-  letter-spacing:1px;
-  color:var(--ink);
-  opacity:0.5;
-  white-space:nowrap;
-  text-transform:uppercase;
+.marquee:hover .marquee-track{
+  animation-play-state:paused;
+}
+
+.brand-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border:1px solid rgba(18,35,32,0.08);
+  border-radius:10px;
+  padding:12px 26px;
+  height:60px;
+  box-shadow:0 4px 10px rgba(18,35,32,0.05);
+  flex-shrink:0;
+}
+
+.brand-item img{
+  max-height:32px;
+  max-width:110px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:grayscale(1) opacity(0.75);
+  transition:filter 0.25s ease;
+}
+
+.brand-item:hover img{
+  filter:grayscale(0) opacity(1);
 }
 
 @keyframes marquee-scroll{
@@ -1042,35 +1063,6 @@ section{
   </div>
 </section>
 
-<!-- ===== BRANDS MARQUEE ===== -->
-<section class="brands">
-  <div class="brands-label">Servicing All Major Truck Brands</div>
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>Ford</span>
-      <span>Hino</span>
-      <span>Isuzu</span>
-      <span>Mack</span>
-      <span>Volvo</span>
-      <span>Freightliner</span>
-      <span>International</span>
-      <span>Kenworth</span>
-      <span>Peterbilt</span>
-      <span>Western Star</span>
-      <span>Ford</span>
-      <span>Hino</span>
-      <span>Isuzu</span>
-      <span>Mack</span>
-      <span>Volvo</span>
-      <span>Freightliner</span>
-      <span>International</span>
-      <span>Kenworth</span>
-      <span>Peterbilt</span>
-      <span>Western Star</span>
-    </div>
-  </div>
-</section>
-
 <!-- ===== SERVICES ===== -->
 <section class="services" id="services">
   <div class="container">
@@ -1182,6 +1174,35 @@ section{
 
     </div>
 
+  </div>
+</section>
+
+<!-- ===== BRANDS MARQUEE ===== -->
+<section class="brands">
+  <div class="brands-label">Servicing All Major Truck Brands</div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="brand-item"><img src="logos/ford.svg" alt="Ford"></div>
+      <div class="brand-item"><img src="logos/hino.svg" alt="Hino"></div>
+      <div class="brand-item"><img src="logos/isuzu.svg" alt="Isuzu"></div>
+      <div class="brand-item"><img src="logos/mack.svg" alt="Mack"></div>
+      <div class="brand-item"><img src="logos/volvo.svg" alt="Volvo"></div>
+      <div class="brand-item"><img src="logos/freightliner.svg" alt="Freightliner"></div>
+      <div class="brand-item"><img src="logos/international.svg" alt="International"></div>
+      <div class="brand-item"><img src="logos/kenworth.jpg" alt="Kenworth"></div>
+      <div class="brand-item"><img src="logos/peterbilt.svg" alt="Peterbilt"></div>
+      <div class="brand-item"><img src="logos/westernstar.svg" alt="Western Star"></div>
+      <div class="brand-item"><img src="logos/ford.svg" alt="Ford"></div>
+      <div class="brand-item"><img src="logos/hino.svg" alt="Hino"></div>
+      <div class="brand-item"><img src="logos/isuzu.svg" alt="Isuzu"></div>
+      <div class="brand-item"><img src="logos/mack.svg" alt="Mack"></div>
+      <div class="brand-item"><img src="logos/volvo.svg" alt="Volvo"></div>
+      <div class="brand-item"><img src="logos/freightliner.svg" alt="Freightliner"></div>
+      <div class="brand-item"><img src="logos/international.svg" alt="International"></div>
+      <div class="brand-item"><img src="logos/kenworth.jpg" alt="Kenworth"></div>
+      <div class="brand-item"><img src="logos/peterbilt.svg" alt="Peterbilt"></div>
+      <div class="brand-item"><img src="logos/westernstar.svg" alt="Western Star"></div>
+    </div>
   </div>
 </section>
 
