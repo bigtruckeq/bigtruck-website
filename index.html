@@ -432,21 +432,27 @@ section{
 }
 
 .industry-card{
-  background:#f7fbfa;
+  background:#fff;
   border:1px solid rgba(18,120,106,0.14);
   border-radius:12px;
-  padding:30px 26px;
+  overflow:hidden;
   transition:transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .industry-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 14px 30px rgba(18,35,32,0.1);
+  box-shadow:0 14px 30px rgba(18,35,32,0.12);
 }
 
-.industry-icon{
-  font-size:32px;
-  margin-bottom:14px;
+.industry-card img{
+  width:100%;
+  aspect-ratio:7/4;
+  object-fit:cover;
+  display:block;
+}
+
+.industry-card-body{
+  padding:22px 24px 26px;
 }
 
 .industry-card h4{
@@ -1113,33 +1119,43 @@ section{
     <div class="industries-grid">
 
       <div class="industry-card">
-        <div class="industry-icon">🚚</div>
-        <h4>Commercial Truck Fleets</h4>
-        <p>Maintenance and repair solutions for commercial fleet operators.</p>
+        <img src="industries/commercial-fleets.webp" alt="Commercial truck fleet vacuum truck">
+        <div class="industry-card-body">
+          <h4>Commercial Truck Fleets</h4>
+          <p>Maintenance and repair solutions for commercial fleet operators.</p>
+        </div>
       </div>
 
       <div class="industry-card">
-        <div class="industry-icon">🚻</div>
-        <h4>Portable Sanitation Companies</h4>
-        <p>Specialized service for vacuum trucks and sanitation equipment.</p>
+        <img src="industries/portable-sanitation.webp" alt="Technician servicing a portable sanitation unit">
+        <div class="industry-card-body">
+          <h4>Portable Sanitation Companies</h4>
+          <p>Specialized service for vacuum trucks and sanitation equipment.</p>
+        </div>
       </div>
 
       <div class="industry-card">
-        <div class="industry-icon">🏗️</div>
-        <h4>Construction Equipment</h4>
-        <p>Heavy-duty repair and maintenance for construction machinery.</p>
+        <img src="industries/construction.webp" alt="Construction excavator and vacuum truck on a job site">
+        <div class="industry-card-body">
+          <h4>Construction Equipment</h4>
+          <p>Heavy-duty repair and maintenance for construction machinery.</p>
+        </div>
       </div>
 
       <div class="industry-card">
-        <div class="industry-icon">🏛️</div>
-        <h4>Municipal &amp; Utility Fleets</h4>
-        <p>Reliable support for public service and utility vehicles.</p>
+        <img src="industries/municipal-utility.webp" alt="Municipal utility vacuum truck on a public street">
+        <div class="industry-card-body">
+          <h4>Municipal &amp; Utility Fleets</h4>
+          <p>Reliable support for public service and utility vehicles.</p>
+        </div>
       </div>
 
       <div class="industry-card">
-        <div class="industry-icon">🔑</div>
-        <h4>Independent Fleet Owners</h4>
-        <p>Professional service for owner-operators and small fleets.</p>
+        <img src="industries/independent-owners.webp" alt="Technician performing maintenance on truck equipment">
+        <div class="industry-card-body">
+          <h4>Independent Fleet Owners</h4>
+          <p>Professional service for owner-operators and small fleets.</p>
+        </div>
       </div>
 
     </div>
