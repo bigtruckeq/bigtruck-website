@@ -566,55 +566,143 @@ section{
   color:#fff;
 }
 
-/* ===== OUR PROCESS ===== */
-.process-steps{
+/* ===== TESTIMONIALS ===== */
+.logo-grid{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:30px;
-  position:relative;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+  margin-bottom:64px;
 }
 
-.process-steps::before{
-  content:'';
-  position:absolute;
-  top:28px;
-  left:12%;
-  right:12%;
-  height:2px;
-  background:rgba(18,120,106,0.2);
-  z-index:0;
-}
-
-.process-step{
-  text-align:center;
-  position:relative;
-  z-index:1;
-}
-
-.process-number{
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:var(--accent);
-  color:#fff;
-  font-size:22px;
-  font-weight:800;
+.logo-item{
   display:flex;
   align-items:center;
   justify-content:center;
-  margin:0 auto 18px;
+  background:#fff;
+  border:1px solid rgba(18,35,32,0.08);
+  border-radius:10px;
+  padding:24px 20px;
+  transition:border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.process-step h4{
-  font-size:18px;
-  margin-bottom:8px;
+.logo-item img{
+  max-height:44px;
+  max-width:150px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:grayscale(1) opacity(0.85);
+  transition:filter 0.3s ease, transform 0.3s ease;
+}
+
+.logo-item:hover img{
+  filter:grayscale(0) opacity(1);
+  transform:scale(1.08);
+}
+
+.logo-item.active{
+  border-color:var(--accent);
+  box-shadow:0 10px 24px rgba(18,120,106,0.15);
+}
+
+.logo-item.active img{
+  filter:grayscale(0) opacity(1);
+}
+
+.testimonial-slider{
+  max-width:760px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.testimonial-arrow{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid rgba(18,35,32,0.15);
+  background:#fff;
+  color:var(--ink);
+  font-size:20px;
+  cursor:pointer;
+  flex-shrink:0;
+  transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.testimonial-arrow:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+}
+
+.testimonial-track{
+  position:relative;
+  flex:1;
+  min-height:230px;
+}
+
+.testimonial-slide{
+  position:absolute;
+  inset:0;
+  text-align:center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 0.6s ease;
+}
+
+.testimonial-slide.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.testimonial-stars{
+  color:#f5b400;
+  font-size:20px;
+  letter-spacing:4px;
+  margin-bottom:20px;
+}
+
+.testimonial-quote{
+  font-size:22px;
+  line-height:1.6;
+  color:var(--ink);
+  font-weight:500;
+  margin-bottom:26px;
+}
+
+.testimonial-author strong{
+  display:block;
+  font-size:16px;
   color:var(--ink);
 }
 
-.process-step p{
+.testimonial-author span{
   color:var(--slate);
   font-size:14px;
-  line-height:1.6;
+}
+
+.testimonial-dots{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:34px;
+}
+
+.testimonial-dots .dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  border:none;
+  padding:0;
+  background:rgba(18,35,32,0.2);
+  cursor:pointer;
+  transition:background 0.2s ease, transform 0.2s ease;
+}
+
+.testimonial-dots .dot.active{
+  background:var(--accent);
+  transform:scale(1.3);
 }
 
 /* ===== CONTACT ===== */
@@ -907,13 +995,12 @@ section{
     grid-template-columns:repeat(2, 1fr);
   }
 
-  .process-steps{
+  .logo-grid{
     grid-template-columns:repeat(2, 1fr);
-    row-gap:50px;
   }
 
-  .process-steps::before{
-    display:none;
+  .testimonial-quote{
+    font-size:19px;
   }
 
   .about-inner,
@@ -966,8 +1053,22 @@ section{
     grid-template-columns:1fr;
   }
 
-  .process-steps{
+  .logo-grid{
     grid-template-columns:1fr;
+  }
+
+  .testimonial-slider{
+    gap:12px;
+  }
+
+  .testimonial-quote{
+    font-size:17px;
+  }
+
+  .testimonial-arrow{
+    width:36px;
+    height:36px;
+    font-size:17px;
   }
 
   .about-checklist{
@@ -1267,43 +1368,88 @@ section{
   </div>
 </section>
 
-<!-- ===== OUR PROCESS ===== -->
-<section class="process section-light" id="process">
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials section-light" id="testimonials">
   <div class="container">
 
     <div class="section-head">
-      <span class="section-tag">How It Works</span>
+      <span class="section-tag">Trusted By</span>
       <div class="accent-line"></div>
-      <h3>Our Process</h3>
-      <p>A straightforward path from the first call to getting you back on the road.</p>
+      <h3>Trusted by Fleet Operators Across Florida</h3>
+      <p>We're proud to support some of the region's leading commercial fleets.</p>
     </div>
 
-    <div class="process-steps">
+    <div class="logo-grid" id="logoGrid">
+      <div class="logo-item" data-company="uss">
+        <img src="testimonials/united-site-services.webp" alt="United Site Services">
+      </div>
+      <div class="logo-item" data-company="eam">
+        <img src="testimonials/eam.webp" alt="EAM - Engine &amp; Accessory Manufacturing">
+      </div>
+      <div class="logo-item" data-company="aes">
+        <img src="testimonials/aes-portable.webp" alt="AES Portable Sanitation">
+      </div>
+      <div class="logo-item">
+        <img src="testimonials/liquid-environmental.webp" alt="Liquid Environmental Solutions">
+      </div>
+      <div class="logo-item">
+        <img src="testimonials/penske.webp" alt="Penske">
+      </div>
+      <div class="logo-item">
+        <img src="testimonials/john-to-go.webp" alt="John To Go">
+      </div>
+      <div class="logo-item">
+        <img src="testimonials/scaffolds-florida.webp" alt="Scaffolds of Florida">
+      </div>
+      <div class="logo-item">
+        <img src="testimonials/safety-kleen.webp" alt="Safety-Kleen">
+      </div>
+      <div class="logo-item">
+        <img src="testimonials/truckmax.webp" alt="TruckMax">
+      </div>
+    </div>
 
-      <div class="process-step">
-        <div class="process-number">1</div>
-        <h4>Contact Us</h4>
-        <p>Reach out by phone or submit a service request.</p>
+    <div class="testimonial-slider">
+      <button class="testimonial-arrow" id="testimonialPrev" aria-label="Previous testimonial">&#8249;</button>
+
+      <div class="testimonial-track" id="testimonialTrack">
+
+        <div class="testimonial-slide active" data-company="uss">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">"Big Truck Equipment has become our go-to partner for vacuum truck repairs. Fast response, quality workmanship, and minimal downtime for our fleet."</p>
+          <div class="testimonial-author">
+            <strong>Carlos G&oacute;mez</strong>
+            <span>United Site Services &middot; &Aacute;rea Manager Florida</span>
+          </div>
+        </div>
+
+        <div class="testimonial-slide" data-company="eam">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">"Professional technicians, excellent communication, and reliable repairs. Highly recommended for heavy-duty fleet maintenance."</p>
+          <div class="testimonial-author">
+            <strong>Ra&uacute;l Logreira</strong>
+            <span>Engine &amp; Accessory Manufacturing &middot; Service/Technical Support</span>
+          </div>
+        </div>
+
+        <div class="testimonial-slide" data-company="aes">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">"They understand our equipment and always get us back on the road quickly."</p>
+          <div class="testimonial-author">
+            <strong>Rene Guerra</strong>
+            <span>AES Portable Sanitation &middot; President</span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="process-step">
-        <div class="process-number">2</div>
-        <h4>Inspection &amp; Diagnosis</h4>
-        <p>Our technicians identify the issue and recommend the best solution.</p>
-      </div>
+      <button class="testimonial-arrow" id="testimonialNext" aria-label="Next testimonial">&#8250;</button>
+    </div>
 
-      <div class="process-step">
-        <div class="process-number">3</div>
-        <h4>Professional Repair</h4>
-        <p>We complete the work using proven repair procedures and quality parts.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-number">4</div>
-        <h4>Back on the Road</h4>
-        <p>Your truck or equipment returns to service safely and efficiently.</p>
-      </div>
-
+    <div class="testimonial-dots" id="testimonialDots">
+      <button class="dot active" data-index="0" aria-label="Testimonial 1"></button>
+      <button class="dot" data-index="1" aria-label="Testimonial 2"></button>
+      <button class="dot" data-index="2" aria-label="Testimonial 3"></button>
     </div>
 
   </div>
@@ -1492,6 +1638,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.location.href = 'mailto:contact@bigtruckeq.com?subject=' + subject + '&body=' + body;
   });
+
+  // Testimonial slider
+  var slides = document.querySelectorAll('.testimonial-slide');
+  var dots = document.querySelectorAll('.testimonial-dots .dot');
+  var logoItems = document.querySelectorAll('.logo-item');
+  var current = 0;
+  var timer;
+
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+
+    slides.forEach(function (slide, i) {
+      slide.classList.toggle('active', i === current);
+    });
+
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle('active', i === current);
+    });
+
+    var activeCompany = slides[current].getAttribute('data-company');
+    logoItems.forEach(function (item) {
+      item.classList.toggle('active', item.getAttribute('data-company') === activeCompany);
+    });
+  }
+
+  function nextSlide() {
+    showSlide(current + 1);
+  }
+
+  function restartTimer() {
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 6000);
+  }
+
+  if (slides.length) {
+    showSlide(0);
+    restartTimer();
+
+    document.getElementById('testimonialNext').addEventListener('click', function () {
+      nextSlide();
+      restartTimer();
+    });
+
+    document.getElementById('testimonialPrev').addEventListener('click', function () {
+      showSlide(current - 1);
+      restartTimer();
+    });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        showSlide(parseInt(dot.getAttribute('data-index'), 10));
+        restartTimer();
+      });
+    });
+  }
 
 });
 </script>
